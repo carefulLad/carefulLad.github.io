@@ -1,0 +1,122 @@
+/* Base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', system-ui, sans-serif;
+    background: radial-gradient(circle at 30% 20%, rgba(239,68,68,0.08), transparent 40%),
+                radial-gradient(circle at 70% 80%, rgba(185,28,28,0.06), transparent 45%),
+                #0a0a0a;
+    color: #e5e7eb;
+    min-height: 100vh;
+}
+
+/* Layout */
+.page-wrapper {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 4rem 2rem 6rem;
+}
+
+/* Header */
+.tierlist-header {
+    text-align: center;
+    margin-bottom: 4rem;
+}
+
+.tierlist-title {
+    font-family: 'Pixelify Sans', sans-serif;
+    font-size: 4rem;
+    font-weight: 700;
+    background: linear-gradient(135deg, #F87171, #EF4444, #DC2626);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.tierlist-title span {
+    display: block;
+    font-size: 2.25rem;
+    margin-top: 0.5rem;
+}
+
+.tierlist-subtitle {
+    margin-top: 1rem;
+    color: #94a3b8;
+}
+
+/* Tier List */
+.tierlist {
+    display: flex;
+    flex-direction: column;
+    gap: 1.4rem;
+}
+
+/* Tier Row */
+.tier {
+    display: flex;
+    align-items: stretch;
+    border-radius: 1.25rem;
+    background: rgba(10,10,10,0.85);
+    border: 1px solid rgba(239,68,68,0.25);
+    backdrop-filter: blur(18px);
+    box-shadow:
+        0 10px 30px rgba(0,0,0,0.6),
+        0 0 25px rgba(239,68,68,0.15);
+    overflow: hidden;
+    transition: transform 0.25s ease;
+}
+
+.tier:hover {
+    transform: translateY(-4px);
+}
+
+/* Tier Label */
+.tier-label {
+    min-width: 90px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Pixelify Sans', sans-serif;
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: #fff;
+}
+
+/* Tier Content */
+.tier-content {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1.25rem 1.5rem;
+    flex-wrap: wrap;
+}
+
+.player {
+    padding: 0.6rem 1.3rem;
+    border-radius: 0.75rem;
+    font-family: 'Pixelify Sans', sans-serif;
+    font-weight: 600;
+    background: rgba(239,68,68,0.18);
+    border: 1px solid rgba(239,68,68,0.4);
+    box-shadow: 0 0 15px rgba(239,68,68,0.35);
+}
+
+/* Tier Colors */
+.tier-ht1 .tier-label { background: linear-gradient(180deg, #F87171, #EF4444); }
+.tier-lt1 .tier-label { background: linear-gradient(180deg, #FB7185, #F43F5E); }
+
+.tier-ht2 .tier-label { background: linear-gradient(180deg, #FCA5A5, #F87171); }
+.tier-lt2 .tier-label { background: linear-gradient(180deg, #FDA4AF, #FB7185); }
+
+.tier-ht3 .tier-label { background: linear-gradient(180deg, #FDBA74, #FB923C); }
+.tier-lt3 .tier-label { background: linear-gradient(180deg, #FED7AA, #FDBA74); }
+
+.tier-ht4 .tier-label { background: linear-gradient(180deg, #CBD5E1, #94A3B8); }
+.tier-lt4 .tier-label { background: linear-gradient(180deg, #94A3B8, #64748B); }
+
+.tier-ht5 .tier-label { background: linear-gradient(180deg, #78716C, #57534E); }
+.tier-lt5 .tier-label { background: linear-gradient(180deg, #44403C, #292524); }

@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Jobs - Veldivia</title>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&display=swap" rel="stylesheet">
+
+    <!-- Jobs page styles -->
+    <link rel="stylesheet" href="css/main.css">
+    <!-- Override to ensure logo text sits beside the icon -->
+    <style>
+      .logo {
+        display: inline-flex !important;
+        flex-direction: row !important;
+        align-items: center !important;
+        gap: 0.5rem !important;
+      }
+      .logo-text {
+        display: inline-block !important;
+        vertical-align: middle !important;
+        margin-left: 0 !important;
+      }
+      .logo-icon {
+        vertical-align: middle !important;
+      }
+    </style>
+</head>
+<body>
+    <!-- Scrollable content wrapper -->
+    <div id="content-wrapper">
+
+        <nav class="navbar">
+            <a href="../homepage/index.html" class="logo">
+                <img src="../content/LOGO.png" alt="Veldivia logo" class="logo-icon">
+                <span class="logo-text">Veldivia</span>
+            </a>
+            
+            <!-- Mobile Hamburger Button -->
+            <button class="hamburger" id="hamburger" aria-label="Toggle navigation menu" aria-expanded="false">
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+            </button>
+            
+            <div class="nav-links" id="navLinks">
+                <a href="../homepage/index.html">Home</a>
+                <a href="jobs.html" class="active">Jobs</a>
+                <a href="../rules/rules.html">Rules</a>
+                
+                <div class="nav-server-ip" onclick="copyIP()" title="Click to copy">
+                    <span>play.veldivia.net</span>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Mobile Menu Overlay -->
+        <div class="mobile-menu-overlay" id="mobileMenuOverlay"></div>
+        
+        <!-- Mobile Menu -->
+        <div class="mobile-menu" id="mobileMenu">
+            <div class="mobile-menu-content">
+                <a href="../homepage/index.html" class="mobile-menu-link" data-index="0">Home</a>
+                <a href="jobs.html" class="mobile-menu-link active" data-index="1">Jobs</a>
+                <a href="../rules/rules.html" class="mobile-menu-link" data-index="2">Rules</a>
+                <div class="mobile-menu-link mobile-server-ip" onclick="copyIP()" data-index="3">
+                    <span>play.veldivia.net</span>
+                </div>
+            </div>
+        </div>
+
+        <main class="main-content">
+            <h1 class="page-title gradient-gold-text page-enter">Jobs</h1>
+            <p class="page-subtitle page-enter">Want to be a part of the Veldivia team? View our current openings.</p>
+            <div class="content-card page-enter">
+                <h2 class="section-title">Our <span class="gradient-gold-text">Team</span></h2>
+                <p class="section-text">Veldivia is a brand-new project that truly kicked off on the 7th, and we’re already working hard to make it something special. We love taking ideas and turning them into real experiences in Minecraft, and we’re looking for people who feel the same way. If you’re driven, excited to help build a server from its early days, and ready to put real effort into the community, there’s a place for you here. All roles are fully remote, and compensation varies depending on the position.</p>
+                <h2 class="section-title">General <span class="gradient-gold-text">Expectations</span></h2>
+                <p class="section-text small-margin">All applicants should meet the following base requirements:</p>
+                <ul class="requirements-list">
+                    <li>Strong English language skills for effective written and spoken communication</li>
+                    <li>Access to reliable tools and equipment for remote team collaboration</li>
+                    <li>Ability to work across different time zones, especially US/EU business hours</li>
+                    <li>Background in remote work environments or technology-focused companies</li>
+                    <li>Authentic enthusiasm for digital innovation and crafting quality user experiences</li>
+                </ul>
+                <h2 class="section-title">Why Join <span class="gradient-gold-text">Veldivia</span></h2>
+                <p class="section-text small-margin">Every role at Veldivia comes with these core benefits:</p>
+                <ul class="requirements-list">
+                    <li>Remote work with flexible hours - Enjoy the freedom to work from anywhere with a schedule that adapts to your life</li>
+                    <li>Interact with a large and growing community - Become part of an active network of players, moderators, creators, and developers</li>
+                    <li>Opportunities to improve your skills and grow personally - Gain hands-on experience, learn new skills, and advance at your own pace</li>
+                    <li>Work with a motivated and dedicated team - Collaborate with a passionate staff focused on creating a welcoming and well-managed environment</li>
+                </ul>
+                <h2 class="section-title according-section-title">Volunteer <span class="gradient-gold-text">Positions</span></h2>
+                <div class="accordion-section">
+                    <div class="accordion-item">
+                        <div class="accordion-header"><span class="accordion-title">Server Moderator</span><span
+                                class="accordion-icon-wrapper"><img src="images/icon-arrow.svg"
+                                    alt="Toggle indicator" class="accordion-icon"></span></div>
+                        <div class="accordion-content">
+                            <div class="accordion-inner">
+                                <div class="accordion-grid">
+                                    <div class="accordion-column">
+                                        <h4>Expectations</h4>
+                                        <ul>
+                                            <li>Previous experience in moderating large Minecraft networks</li>
+                                            <li>Strong leadership skills</li>
+                                        </ul>
+                                    </div>
+                                    <div class="accordion-column">
+                                        <h4>Benefits</h4>
+                                        <ul>
+                                            <li>Interact with a large and growing community</li>
+                                            <li>Opportunities to improve your skills and grow personally</li>
+                                            <li>Work with a motivated and dedicated team</li>
+                                        </ul>
+                                    </div>
+                                    <div class="accordion-meta">
+                                        <span class="last-updated">Updated: Dec 7, 2025</span>
+                                        <a href="https://1eichl0gixk.typeform.com/to/MJiCpCzP" target="_blank" class="apply-btn">Apply</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <div class="accordion-header"><span class="accordion-title">Translator</span><span
+                                class="accordion-icon-wrapper"><img src="images/icon-arrow.svg"
+                                    alt="Toggle indicator" class="accordion-icon"></span></div>
+                        <div class="accordion-content">
+                            <div class="accordion-inner">
+                                <div class="accordion-grid">
+                                    <div class="accordion-column">
+                                        <h4>Expectations</h4>
+                                        <ul>
+                                            <li>Fully fluent in English and another popular language</li>
+                                            <li>Experience playing Minecraft and games in general and using terms across languages</li>
+                                            <li>Demonstrate a strong attention to detail</li>
+                                        </ul>
+                                    </div>
+                                    <div class="accordion-column">
+                                        <h4>Benefits</h4>
+                                        <ul>
+                                            <li>Interact with a large and growing community</li>
+                                            <li>Opportunities to improve your skills and grow personally</li>
+                                            <li>Work with a motivated and dedicated team</li>
+                                        </ul>
+                                    </div>
+                                    <div class="accordion-meta">
+                                        <span class="last-updated">Updated: Dec 7, 2025</span>
+                                        <a href="https://1eichl0gixk.typeform.com/to/r6vEgGMZ" target="_blank" class="apply-btn">Apply</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <div class="accordion-header"><span class="accordion-title">Playtester</span><span
+                                class="accordion-icon-wrapper"><img src="images/icon-arrow.svg"
+                                    alt="Toggle indicator" class="accordion-icon"></span></div>
+                        <div class="accordion-content">
+                            <div class="accordion-inner">
+                                <div class="accordion-grid">
+                                    <div class="accordion-column">
+                                        <h4>Expectations</h4>
+                                        <ul>
+                                            <li>Experience playing Minecraft and identifying gameplay issues</li>
+                                            <li>Strong attention to detail and ability to provide constructive feedback</li>
+                                            <li>Available for 5+ hours per week</li>
+                                        </ul>
+                                    </div>
+                                    <div class="accordion-column">
+                                        <h4>Benefits</h4>
+                                        <ul>
+                                            <li>Interact with a large and growing community</li>
+                                            <li>Opportunities to improve your skills and grow personally</li>
+                                            <li>Work with a motivated and dedicated team</li>
+                                        </ul>
+                                    </div>
+                                    <div class="accordion-meta">
+                                        <span class="last-updated">Updated: Dec 7, 2025</span>
+                                        <a href="https://1eichl0gixk.typeform.com/to/arf7dkXf" target="_blank" class="apply-btn">Apply</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <div class="accordion-header"><span class="accordion-title">QA Tester</span><span
+                                class="accordion-icon-wrapper"><img src="images/icon-arrow.svg"
+                                    alt="Toggle indicator" class="accordion-icon"></span></div>
+                        <div class="accordion-content">
+                            <div class="accordion-inner">
+                                <div class="accordion-grid">
+                                    <div class="accordion-column">
+                                        <h4>Expectations</h4>
+                                        <ul>
+                                            <li>Experience testing software or games</li>
+                                            <li>Ability to document and report bugs effectively</li>
+                                            <li>Available for 10+ hours per week</li>
+                                        </ul>
+                                    </div>
+                                    <div class="accordion-column">
+                                        <h4>Benefits</h4>
+                                        <ul>
+                                            <li>Interact with a large and growing community</li>
+                                            <li>Opportunities to improve your skills and grow personally</li>
+                                            <li>Work with a motivated and dedicated team</li>
+                                        </ul>
+                                    </div>
+                                    <div class="accordion-meta">
+                                        <span class="last-updated">Updated: Dec 7, 2025</span>
+                                        <a href="https://1eichl0gixk.typeform.com/to/WYLzINGX" target="_blank" class="apply-btn">Apply</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <h2 class="section-title according-section-title">Paid <span class="gradient-gold-text">Positions</span></h2>
+                <div class="accordion-section">
+                    <div class="accordion-item">
+                        <div class="accordion-header"><span class="accordion-title">Java Developer</span><span
+                                class="accordion-icon-wrapper"><img src="images/icon-arrow.svg"
+                                    alt="Toggle indicator" class="accordion-icon"></span></div>
+                        <div class="accordion-content">
+                            <div class="accordion-inner">
+                                <div class="accordion-grid">
+                                    <div class="accordion-column">
+                                        <h4>Expectations</h4>
+                                        <ul>
+                                            <li>2+ years of experience working with Java and Minecraft plugins</li>
+                                            <li>Strong understanding of Minecraft server architecture</li>
+                                            <li>Previous experience working for a Java network of scale</li>
+                                            <li>Experience working with MongoDB, Redis, gRPC</li>
+                                            <li>Available for 20-40 hours per week</li>
+                                            <li>Ability to work in a team-oriented environment</li>
+                                        </ul>
+                                    </div>
+                                    <div class="accordion-column">
+                                        <h4>Benefits</h4>
+                                        <ul>
+                                            <li>Interact with a large and growing community</li>
+                                            <li>Opportunities to improve your skills and grow personally</li>
+                                            <li>Work with a motivated and dedicated team</li>
+                                        </ul>
+                                    </div>
+                                    <div class="accordion-meta">
+                                        <span class="last-updated">Updated: Dec 7, 2025</span>
+                                        <a href="https://1eichl0gixk.typeform.com/to/FLqKb9uq" target="_blank" class="apply-btn">Apply</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <div class="accordion-header"><span class="accordion-title">Bedrock Developer</span><span
+                                class="accordion-icon-wrapper"><img src="images/icon-arrow.svg"
+                                    alt="Toggle indicator" class="accordion-icon"></span></div>
+                        <div class="accordion-content">
+                            <div class="accordion-inner">
+                                <div class="accordion-grid">
+                                    <div class="accordion-column">
+                                        <h4>Expectations</h4>
+                                        <ul>
+                                            <li>This position will be part of a new sub-team aimed at creating a Bedrock server</li>
+                                            <li>2+ years of experience working on Minecraft Bedrock Edition</li>
+                                            <li>Strong understanding of Minecraft server architecture</li>
+                                            <li>Previous experience working for a Java or Bedrock Edition network of scale</li>
+                                            <li>Experience working with MongoDB, gRPC</li>
+                                            <li>Available for 20-40 hours per week</li>
+                                            <li>Ability to work in a team-oriented environment</li>
+                                        </ul>
+                                    </div>
+                                    <div class="accordion-column">
+                                        <h4>Benefits</h4>
+                                        <ul>
+                                            <li>Interact with a large and growing community</li>
+                                            <li>Opportunities to improve your skills and grow personally</li>
+                                            <li>Work with a motivated and dedicated team</li>
+                                        </ul>
+                                    </div>
+                                    <div class="accordion-meta">
+                                        <span class="last-updated">Updated: Dec 7, 2025</span>
+                                        <a href="https://1eichl0gixk.typeform.com/to/FLqKb9uq" target="_blank" class="apply-btn">Apply</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <div class="accordion-header"><span class="accordion-title">2D Artist</span><span
+                                class="accordion-icon-wrapper"><img src="images/icon-arrow.svg"
+                                    alt="Toggle indicator" class="accordion-icon"></span></div>
+                        <div class="accordion-content">
+                            <div class="accordion-inner">
+                                <div class="accordion-grid">
+                                    <div class="accordion-column">
+                                        <h4>Expectations</h4>
+                                        <ul>
+                                            <li>Experience completing commissions in the art space via freelance or part time contracts</li>
+                                            <li>1+ year experience working with Aseprite / GIMP / Photoshop or preferred pixel art software</li>
+                                            <li>Strong familiarity with Hoplite's current art style for 2D icons and GUIs</li>
+                                            <li>Basic to advanced understanding of resource pack implementations</li>
+                                        </ul>
+                                    </div>
+                                    <div class="accordion-column">
+                                        <h4>Benefits</h4>
+                                        <ul>
+                                            <li>Remote work with flexible hours</li>
+                                            <li>Interact with a large and growing community</li>
+                                            <li>Opportunities to improve your skills and grow personally</li>
+                                            <li>Work with a motivated and dedicated team</li>
+                                        </ul>
+                                    </div>
+                                    <div class="accordion-meta">
+                                        <span class="last-updated">Updated: Dec 11, 2025</span>
+                                        <a href="https://1eichl0gixk.typeform.com/to/U3vvzYEq" target="_blank" class="apply-btn">Apply</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <div class="accordion-header"><span class="accordion-title">3D Modeler</span><span
+                                class="accordion-icon-wrapper"><img src="images/icon-arrow.svg"
+                                    alt="Toggle indicator" class="accordion-icon"></span></div>
+                        <div class="accordion-content">
+                            <div class="accordion-inner">
+                                <div class="accordion-grid">
+                                    <div class="accordion-column">
+                                        <h4>Expectations</h4>
+                                        <ul>
+                                            <li>Experience working in the art field and completing commissions</li>
+                                            <li>1+ year of experience working with Blockbench and Minecraft models</li>
+                                            <li>Advanced understanding of technical aspects of Minecraft models</li>
+                                            <li>Basic to advanced understanding of resource packs and ModelEngine</li>
+                                        </ul>
+                                    </div>
+                                    <div class="accordion-column">
+                                        <h4>Benefits</h4>
+                                        <ul>
+                                            <li>Remote work with flexible hours</li>
+                                            <li>Interact with a large and growing community</li>
+                                            <li>Opportunities to improve your skills and grow personally</li>
+                                            <li>Work with a motivated and dedicated team</li>
+                                        </ul>
+                                    </div>
+                                    <div class="accordion-meta">
+                                        <span class="last-updated">Updated: Dec 11, 2025</span>
+                                        <a href="https://1eichl0gixk.typeform.com/to/Sc5HrM0I" target="_blank" class="apply-btn">Apply</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </main>
+
+        <footer class="footer">
+            <div class="footer-bottom">
+                <div class="footer-logo">
+                    <span class="footer-logo-text">Veldivia</span>
+                </div>
+                <div class="footer-info">©2025 Veldivia Inc. All Rights Reserved.<br><br></div>
+            </div>
+        </footer>
+    </div>
+
+    <!-- Advanced animations + navbar effects -->
+    <script src="js/main.js"></script>
+</body>
+</html>

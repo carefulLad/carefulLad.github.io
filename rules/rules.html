@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Veldivia - Server Rules</title>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&display=swap" rel="stylesheet">
+
+    <!-- Main styles -->
+    <link rel="stylesheet" href="css/main.css">
+
+    <!-- Logo layout override -->
+    <style>
+        .logo {
+            display: inline-flex !important;
+            flex-direction: row !important;
+            align-items: center !important;
+            gap: 0.5rem !important;
+        }
+        .logo-text {
+            display: inline-block !important;
+            vertical-align: middle !important;
+            margin-left: 0 !important;
+        }
+        .logo-icon {
+            vertical-align: middle !important;
+        }
+    </style>
+</head>
+<body>
+
+<div id="content-wrapper">
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <a href="../homepage/index.html" class="logo">
+            <img src="../content/LOGO.png" alt="Veldivia logo" class="logo-icon">
+            <span class="logo-text">Veldivia</span>
+        </a>
+
+        <!-- Mobile Hamburger -->
+        <button class="hamburger" id="hamburger" aria-label="Toggle navigation menu" aria-expanded="false">
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+        </button>
+
+        <div class="nav-links" id="navLinks">
+            <a href="../homepage/index.html">Home</a>
+            <a href="../job-board/jobs.html">Jobs</a>
+            <a href="../rules/rules.html" class="active">Rules</a>
+            <div class="nav-server-ip" onclick="copyIP()" title="Click to copy">
+                <span>play.veldivia.net</span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <h1 class="hero-title page-enter">Server Rules</h1>
+        <p class="hero-subtitle page-enter">Read and understand our community guidelines to ensure a fair and enjoyable experience for all players.</p>
+    </section>
+
+    <!-- Main content -->
+    <main class="main-content">
+
+        <!-- Introduction Section -->
+        <section class="rules-intro page-enter content-card" id="intro">
+            <div class="intro-content">
+                <p class="intro-text">
+                    By playing on our server, you agree to follow all of the rules listed below. These rules ensure a fair, enjoyable, and respectful environment for all players. Violations of these rules may result in warnings, temporary bans, or permanent bans depending on the severity of the offense.
+                </p>
+                <div class="warning-box">
+                    <div class="warning-icon">⚠</div>
+                    <div class="warning-content">
+                        <p><strong>Our staff members reserve the right to punish for offenses not explicitly listed here</strong> if they believe a player's actions violate the spirit of these rules or negatively impact the community.</p>
+                    </div>
+                </div>
+                <p class="intro-text">
+                    <strong>All players are responsible for their account and any actions performed on it. DO NOT share your account information or password with anyone!</strong>
+                </p>
+                <p class="intro-text">
+                    If you have questions about the rules or need to report a violation, please contact a staff member or create a support ticket.
+                </p>
+            </div>
+        </section>
+
+        <!-- Rules Section 1: Cheating -->
+        <section class="rules-section" id="cheating">
+            <div class="section-header">
+                <h2 class="section-title">
+                    Cheating &
+                    <span style="background: linear-gradient(135deg, #F87171 0%, #EF4444 30%, #DC2626 60%, #B91C1C 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">
+                        Unfair Advantages
+                    </span>
+                </h2>
+                <p class="section-subtitle">Maintaining fair gameplay is our top priority. Any form of cheating or exploitation will result in immediate action.</p>
+            </div>
+
+            <div class="accordion-section">
+                <!-- Accordion Item 1 -->
+                <div class="accordion-item page-enter">
+                    <div class="accordion-header">
+                        <span class="accordion-title">Prohibited Software & Exploits</span>
+                        <span class="accordion-icon-wrapper">
+                            <img src="icon-arrow.svg" alt="Toggle indicator" class="accordion-icon">
+                        </span>
+                    </div>
+                    <div class="accordion-content">
+                        <div class="accordion-inner">
+                            <p class="rule-intro">The following are strictly prohibited and will result in an immediate ban:</p>
+                            <ul class="rule-list">
+                                <li>Hacked clients or cheat clients of any kind</li>
+                                <li>X-ray texture packs or mods that allow you to see through blocks</li>
+                                <li>Autoclickers, macros, or any form of automated gameplay</li>
+                                <li>Duplication exploits or bugs that provide unfair advantages</li>
+                                <li>Any exploit that allows you to gain items, resources, or abilities not intended by normal gameplay</li>
+                                <li>Movement hacks including but not limited to: fly, speed, bhop, spider climb, or Jesus (water walking)</li>
+                                <li>Combat hacks including but not limited to: kill aura, reach, hitbox manipulation, or aim assist</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Accordion Item 2 -->
+                <div class="accordion-item page-enter">
+                    <div class="accordion-header">
+                        <span class="accordion-title">Client Modifications - What's Allowed</span>
+                        <span class="accordion-icon-wrapper">
+                            <img src="icon-arrow.svg" alt="Toggle indicator" class="accordion-icon">
+                        </span>
+                    </div>
+                    <div class="accordion-content">
+                        <div class="accordion-inner">
+                            <p class="rule-intro"><strong>Only harmless, quality-of-life modifications are permitted. These include:</strong></p>
+                            <ul class="rule-list">
+                                <li><strong>Performance mods:</strong> OptiFine, Sodium, Lithium, Phosphor, Starlight, and similar FPS boosters.</li>
+                                <li><strong>Aesthetic modifications:</strong> Shaders, texture packs, custom skies, and cosmetic enhancements that don't provide gameplay advantages</li>
+                                <li><strong>Minimaps:</strong> Only minimaps WITHOUT entity radar, player radar, cave mapping, or mob/player tracking features.</li>
+                                <li><strong>HUD enhancements:</strong> Armor status, potion effects display, FPS counter, coordinates display, and similar informational overlays.</li>
+                                <li><strong>Quality-of-life mods:</strong> Inventory tweaks (non-automated), ViaFabricPlus, better controls, gamma/brightness adjustments.</li>
+                            </ul>
+                            <div class="clause-box">
+                                <div class="clause-header">
+                                    <span class="clause-badge">IMPORTANT</span>
+                                    <span class="clause-title">Client Modifications Clause</span>
+                                </div>
+                                <p>All modifications are used at your own risk. If you are unsure whether a specific mod is permitted, ask a moderator before using it. Staff members have the final say on what constitutes a fair modification.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Rules Section 2: Conduct -->
+        <section class="rules-section" id="conduct">
+            <div class="section-header">
+                <h2 class="section-title">
+                    Conduct &
+                    <span style="background: linear-gradient(135deg, #F87171 0%, #EF4444 30%, #DC2626 60%, #B91C1C 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">
+                        Communication
+                    </span>
+                </h2>
+                <p class="section-subtitle">Respectful communication is essential for a positive community. Harassment and toxic behavior will not be tolerated.</p>
+            </div>
+
+            <div class="accordion-section">
+                <!-- Accordion Item 3 -->
+                <div class="accordion-item page-enter">
+                    <div class="accordion-header">
+                        <span class="accordion-title">Prohibited Behavior</span>
+                        <span class="accordion-icon-wrapper">
+                            <img src="icon-arrow.svg" alt="Toggle indicator" class="accordion-icon">
+                        </span>
+                    </div>
+                    <div class="accordion-content">
+                        <div class="accordion-inner">
+                            <p class="rule-intro">The following behaviors are strictly prohibited:</p>
+                            <ul class="rule-list">
+                                <li>Toxicity, including excessive negativity, insults, or creating a hostile environment.</li>
+                                <li>Harassment or bullying of any player, including repeated unwanted contact or targeted attacks.</li>
+                                <li>Hate speech, slurs, or discriminatory language based on race, ethnicity, gender, religion, sexual orientation, disability, or any other characteristic.</li>
+                                <li>Targeted insults or personal attacks against other players.</li>
+                                <li>Spam or flooding chat with repetitive messages.</li>
+                                <li>Sharing or threatening to share personal information (doxxing).</li>
+                                <li>Impersonating staff members or other players.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Accordion Item 4 -->
+                <div class="accordion-item page-enter">
+                    <div class="accordion-header">
+                        <span class="accordion-title">Voice Chat Policy</span>
+                        <span class="accordion-icon-wrapper">
+                            <img src="icon-arrow.svg" alt="Toggle indicator" class="accordion-icon">
+                        </span>
+                    </div>
+                    <div class="accordion-content">
+                        <div class="accordion-inner">
+                            <p class="rule-intro"><strong>Off-Server Voice Chat:</strong> Any form of voice communication that occurs outside of our server (such as Discord VC, Xbox Party Chat, or other third-party platforms) is used at your own risk.</p>
+                            <div class="clause-box">
+                                <div class="clause-header">
+                                    <span class="clause-badge">NOTICE</span>
+                                    <span class="clause-title">Voice Chat Clause</span>
+                                </div>
+                                <p>Without clear, verifiable proof (such as recordings or screenshots with context), no bans or punishments will be issued for behavior that occurs in off-server voice chats. We can only moderate what happens within our server environment.</p>
+                            </div>
+                            <p style="margin-top: 1.5rem; color: #cbd5e1; line-height: 1.8;">However, if off-server communication leads to in-game harassment, toxicity, or rule violations that affect our community, appropriate action may be taken based on the in-game behavior.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Rules Section 3: Cosmetics -->
+        <section class="rules-section" id="cosmetics">
+            <div class="section-header">
+                <h2 class="section-title">
+                    Usernames, Skins &
+                    <span style="background: linear-gradient(135deg, #F87171 0%, #EF4444 30%, #DC2626 60%, #B91C1C 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">
+                        Cosmetics
+                    </span>
+                </h2>
+                <p class="section-subtitle">Your visual representation on the server must be appropriate for all ages.</p>
+            </div>
+
+            <div class="accordion-section">
+                <!-- Accordion Item 5 -->
+                <div class="accordion-item page-enter">
+                    <div class="accordion-header">
+                        <span class="accordion-title">Appropriate Content Requirements</span>
+                        <span class="accordion-icon-wrapper">
+                            <img src="icon-arrow.svg" alt="Toggle indicator" class="accordion-icon">
+                        </span>
+                    </div>
+                    <div class="accordion-content">
+                        <div class="accordion-inner">
+                            <p class="rule-intro">All visual elements associated with your account must remain appropriate and non-offensive:</p>
+                            <ul class="rule-list">
+                                <li><strong>Usernames:</strong> Your Minecraft username must not contain offensive language, slurs, hate speech, or inappropriate references</li>
+                                <li><strong>Skins:</strong> Player skins must be appropriate for all ages. No inappropriate, offensive, or overly graphic imagery</li>
+                                <li><strong>Capes:</strong> Any custom capes or cosmetic items must follow the same appropriateness standards</li>
+                                <li><strong>Cosmetics:</strong> All cosmetic items, including pets, particles, or other visual effects, must be family-friendly</li>
+                            </ul>
+                            <p style="margin-top: 1.5rem; color: #94a3b8; line-height: 1.8;">Staff members have the final say on what is considered appropriate. If asked to change your username, skin, or cosmetics, you must comply or face temporary restrictions until the issue is resolved.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Rules Section 4: Gameplay -->
+        <section class="rules-section" id="gameplay">
+            <div class="section-header">
+                <h2 class="section-title">
+                    Gameplay
+                    <span style="background: linear-gradient(135deg, #F87171 0%, #EF4444 30%, #DC2626 60%, #B91C1C 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">
+                        Integrity
+                    </span>
+                </h2>
+                <p class="section-subtitle">Respect the server environment, community events, and other players' experiences.</p>
+            </div>
+
+            <div class="accordion-section">
+                <!-- Accordion Item 6 -->
+                <div class="accordion-item page-enter">
+                    <div class="accordion-header">
+                        <span class="accordion-title">Prohibited Disruptive Behavior</span>
+                        <span class="accordion-icon-wrapper">
+                            <img src="icon-arrow.svg" alt="Toggle indicator" class="accordion-icon">
+                        </span>
+                    </div>
+                    <div class="accordion-content">
+                        <div class="accordion-inner">
+                            <p class="rule-intro">The following actions disrupt the server experience and are prohibited:</p>
+                            <ul class="rule-list">
+                                <li><strong>Griefing:</strong> Intentionally scamming or attempting to scam other players</li>
+                                <li><strong>Trolling:</strong> Deliberately provoking, annoying, or disrupting other players for entertainment or malicious purposes.</li>
+                                <li><strong>Event disruption:</strong> Interfering with, sabotaging, or intentionally ruining server-organized events or community activities.</li>
+                                <li><strong>Gameplay interference:</strong> Taking actions specifically designed to prevent others from enjoying the game, such as spawn camping, spawn trapping.</li>
+                                <li><strong>Build abuse:</strong> Creating inappropriate map art, offensive builds, or lag-inducing contraptions.</li>
+                            </ul>
+                            <p style="margin-top: 1.75rem; padding: 1.25rem; background: rgba(239, 68, 68, 0.08); border-left: 3px solid #EF4444; border-radius: 8px; color: #cbd5e1; line-height: 1.8;">
+                                Remember that a healthy community thrives when players respect each other's gameplay experience. If you're unsure whether your actions might be disruptive, ask yourself if you would want others to do the same to you.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Final Note Section -->
+        <section class="final-note">
+            <div class="final-note-content">
+                <p class="final-note-text">These rules are subject to change at any time. Players are responsible for staying informed of current rules.</p>
+                <p class="final-note-thanks">Thank you for being part of our community and helping to keep it enjoyable for everyone!</p>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Mobile Menu Overlay -->
+    <div class="mobile-menu-overlay" id="mobileMenuOverlay"></div>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+        <div class="mobile-menu-content">
+            <a href="../homepage/index.html" class="mobile-menu-link" data-index="0">Home</a>
+            <a href="../job-board/jobs.html" class="mobile-menu-link" data-index="1">Jobs</a>
+            <a href="../rules/rules.html" class="mobile-menu-link active" data-index="2">Rules</a>
+            
+            <div class="mobile-menu-link mobile-server-ip" onclick="copyIP()" data-index="3">
+                <span>play.veldivia.net</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-bottom">
+            <div class="footer-logo">
+                <span class="footer-logo-text">Veldivia</span>
+            </div>
+            <div class="footer-info">
+                ©2025 Veldivia Inc. All Rights Reserved.
+            </div>
+        </div>
+    </footer>
+
+</div>
+
+<!-- Scripts -->
+<script src="js/main.js"></script>
+
+</body>
+</html>

@@ -11,7 +11,7 @@ const navigationConfig = [
         selector: '#news',
         subsections: [
             { id: 'news-card-0', label: 'Veldivia’s Origins & Early Combat Direction', action: 'scroll' },
-            { id: 'news-card-1', label: 'Expanded Infrastructure — EU & NA Proxy Servers', action: 'scroll' },
+            { id: 'news-card-1', label: 'Expanded Infrastructure - EU & NA Proxy Servers', action: 'scroll' },
             { id: 'news-card-2', label: 'Quality-of-Life Improvements & Community Growth', action: 'scroll' }
         ]
     },

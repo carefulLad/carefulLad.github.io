@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Excellent SMP — Schedule</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=DM+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+* { margin:0; padding:0; box-sizing:border-box; }
+
+body {
+  background: #f7f5f0;
+  color: #111;
+  font-family: 'DM Mono', monospace;
+  min-height: 100vh;
+}
+
+.page {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 0 28px 80px;
+}
+
+/* ── MASTHEAD ── */
+.masthead {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 0 18px;
+  border-bottom: 2px solid #111;
+  margin-bottom: 0;
+}
+
+.masthead-left {
+  font-size: 10px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: #999;
+}
+
+.masthead-right {
+  font-size: 10px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #999;
+}
+.masthead-right span { color: #111; }
+
+/* ── TITLE BLOCK ── */
+.title-block {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 44px 0 36px;
+  border-bottom: 1px solid #ccc;
+  margin-bottom: 44px;
+}
+
+.smp-title {
+  font-family: 'Playfair Display', serif;
+  font-weight: 900;
+  font-size: clamp(2.8rem, 8vw, 5.5rem);
+  letter-spacing: -0.01em;
+  line-height: 1;
+  color: #111;
+  margin-bottom: 10px;
+}
+
+.smp-sub {
+  font-size: 10px;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: #aaa;
+}
+
+/* ── LIVE STRIP ── */
+.live-strip {
+  display: grid;
+  grid-template-columns: 1fr 1px 1fr 1px 1fr;
+  border: 1px solid #d8d5cf;
+  margin-bottom: 52px;
+  background: #fff;
+}
+
+.strip-divider { background: #d8d5cf; }
+
+.strip-cell { padding: 22px 24px; }
+
+.strip-label {
+  font-size: 9px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: #bbb;
+  margin-bottom: 8px;
+}
+
+.strip-value {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.55rem;
+  font-weight: 700;
+  line-height: 1;
+  color: #111;
+}
+
+.strip-value.mono {
+  font-family: 'DM Mono', monospace;
+  font-size: 1.35rem;
+  font-weight: 400;
+}
+
+.strip-sub {
+  font-size: 9px;
+  color: #bbb;
+  margin-top: 7px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.live-indicator {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
+.live-dot {
+  width: 7px; height: 7px;
+  border-radius: 50%;
+  background: #ccc;
+  flex-shrink: 0;
+}
+.live-dot.on {
+  background: #111;
+  animation: blink 1.2s ease-in-out infinite;
+}
+.live-dot.soon { background: #999; }
+
+@keyframes blink {
+  0%,100% { opacity:1; }
+  50%      { opacity:0.2; }
+}
+
+.live-word {
+  font-size: 9px;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: #bbb;
+}
+.live-word.on  { color: #111; }
+.live-word.soon { color: #888; }
+
+/* ── TABLE ── */
+.section-head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  padding-bottom: 10px;
+  border-bottom: 2px solid #111;
+  margin-bottom: 0;
+}
+
+.section-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+.section-note {
+  font-size: 9px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #bbb;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 48px;
+}
+
+thead th {
+  font-size: 9px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #bbb;
+  font-weight: 400;
+  padding: 11px 14px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+tbody tr {
+  border-bottom: 1px solid #ece9e4;
+  transition: background 0.15s;
+}
+tbody tr:last-child { border-bottom: none; }
+tbody tr:hover { background: #f0ede7; }
+tbody tr.today-row { background: #fff; }
+tbody tr.today-row td:first-child { border-left: 2px solid #111; }
+
+td { padding: 15px 14px; vertical-align: middle; }
+
+.td-day {
+  font-family: 'Playfair Display', serif;
+  font-size: 1rem;
+  font-weight: 700;
+  color: #111;
+  white-space: nowrap;
+}
+
+.today-pill {
+  display: inline-block;
+  font-family: 'DM Mono', monospace;
+  font-size: 8px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #fff;
+  background: #111;
+  padding: 2px 7px;
+  margin-top: 5px;
+}
+
+.sess-block { display: flex; flex-direction: column; gap: 5px; }
+.sess-row   { display: flex; align-items: center; gap: 8px; }
+
+.sess-num {
+  font-size: 8px;
+  letter-spacing: 0.14em;
+  color: #ccc;
+  width: 16px;
+  flex-shrink: 0;
+}
+
+.sess-time { font-size: 12px; color: #555; }
+.sess-time.hi { color: #111; font-weight: 500; }
+
+.sess-tz {
+  font-size: 8px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #ccc;
+}
+
+.live-pill {
+  font-size: 8px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: #fff;
+  background: #111;
+  padding: 2px 7px;
+}
+
+.col-rule { width:1px; background:#ece9e4; padding:0 !important; }
+
+/* ── FOOTER ── */
+footer {
+  border-top: 1px solid #d8d5cf;
+  padding-top: 16px;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 8px;
+  font-size: 9px;
+  color: #bbb;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+@media (max-width: 600px) {
+  .live-strip { grid-template-columns: 1fr; }
+  .strip-divider { width:auto; height:1px; }
+  .smp-title { font-size: 2.5rem; }
+}
+</style>
+</head>
+<body>
+<div class="page">
+
+  <!-- MASTHEAD -->
+  <div class="masthead">
+    <span class="masthead-left">Online Schedule</span>
+    <span class="masthead-right"><span id="localTime">--:--:--</span>&ensp;your time</span>
+  </div>
+
+  <!-- TITLE BLOCK -->
+  <div class="title-block">
+    <div class="smp-title">Excellent SMP</div>
+    <div class="smp-sub">Streamer Survival Multiplayer &nbsp;·&nbsp; Stream Schedule</div>
+  </div>
+
+  <!-- LIVE STRIP -->
+  <div class="live-strip">
+    <div class="strip-cell">
+      <div class="live-indicator">
+        <div class="live-dot" id="liveDot"></div>
+        <span class="live-word" id="liveWord">—</span>
+      </div>
+      <div class="strip-value mono" id="countdown">--:--:--</div>
+      <div class="strip-sub" id="countdownLabel">Next session in</div>
+    </div>
+    <div class="strip-divider"></div>
+    <div class="strip-cell">
+      <div class="strip-label">Next stream</div>
+      <div class="strip-value" id="nextDay" style="font-size:1.2rem">—</div>
+      <div class="strip-sub" id="nextSess">—</div>
+    </div>
+    <div class="strip-divider"></div>
+    <div class="strip-cell">
+      <div class="strip-label">Your timezone</div>
+      <div class="strip-value" id="yourTz" style="font-size:0.9rem;margin-top:2px;line-height:1.3">—</div>
+      <div class="strip-sub" id="tzOff">—</div>
+    </div>
+  </div>
+
+  <!-- TABLE -->
+  <div class="section-head">
+    <span class="section-title">Weekly Schedule</span>
+    <span class="section-note" id="tzNote">All times in your local zone</span>
+  </div>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Day</th>
+        <th></th>
+        <th>Your Local Time</th>
+        <td class="col-rule"></td>
+        <th>Chicago (CT)</th>
+        <td class="col-rule"></td>
+        <th>Poland (CET)</th>
+      </tr>
+    </thead>
+    <tbody id="scheduleBody"></tbody>
+  </table>
+
+  <footer>
+    <span>Times auto-convert to your browser timezone</span>
+    <span id="footerNote">—</span>
+  </footer>
+</div>
+
+<script>
+const SCHEDULE = [
+  { day:'Monday',   s1:[16,20],   s2:[20.5,24.5] },
+  { day:'Thursday', s1:[16,20],   s2:[20.5,24.5] },
+  { day:'Friday',   s1:[16,20],   s2:[20.5,24.5] },
+  { day:'Saturday', s1:[14,18],   s2:[18.5,22.5] },
+  { day:'Sunday',   s1:[14,18],   s2:[18.5,22.5] },
+];
+const DAY_NAMES = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
+
+function getTZOffset(tz, date) {
+  try {
+    // Use Intl to get the actual UTC offset for the given timezone
+    const utcDate = new Date(date.toLocaleString('en-US', { timeZone: 'UTC' }));
+    const tzDate  = new Date(date.toLocaleString('en-US', { timeZone: tz }));
+    return (tzDate - utcDate) / 3600000;
+  } catch(e) { return 0; }
+}
+
+function cetToTZ(cetH, cetOff, targetOff) {
+  return (((cetH - cetOff + targetOff) % 24) + 24) % 24;
+}
+
+function fmt12(h) {
+  const t=Math.round(h*60), hh=Math.floor(t/60)%24, mm=t%60;
+  const p=hh>=12?'PM':'AM', h12=hh%12||12;
+  return mm ? `${h12}:${String(mm).padStart(2,'0')} ${p}` : `${h12}:00 ${p}`;
+}
+
+function fmt24(h) {
+  const t=Math.round(h*60), hh=Math.floor(t/60)%24, mm=t%60;
+  return `${String(hh).padStart(2,'0')}:${String(mm).padStart(2,'0')}`;
+}
+
+function pad(n) { return String(Math.floor(n)).padStart(2,'0'); }
+
+function buildSessions(cetOff) {
+  const list=[], now=new Date();
+  for(let d=0;d<14;d++){
+    const date=new Date(now);
+    date.setDate(date.getDate()+d);
+    const name=DAY_NAMES[date.getDay()];
+    const entry=SCHEDULE.find(s=>s.day===name);
+    if(!entry) continue;
+    [entry.s1, entry.s2].forEach((s,i)=>{
+      const midnight=Date.UTC(date.getFullYear(),date.getMonth(),date.getDate());
+      list.push({
+        day:name, session:i+1,
+        startEpoch: midnight+(s[0]-cetOff)*3600000,
+        endEpoch:   midnight+(s[1]-cetOff)*3600000,
+      });
+    });
+  }
+  return list.sort((a,b)=>a.startEpoch-b.startEpoch);
+}
+
+function renderTable(cetOff, userOff, chiOff, cetName, chiName) {
+  const today = DAY_NAMES[new Date().getDay()];
+  const now   = new Date(), nowH = now.getHours() + now.getMinutes()/60;
+  const tbody = document.getElementById('scheduleBody');
+  tbody.innerHTML = '';
+
+  SCHEDULE.forEach(e => {
+    const isToday = e.day === today;
+    const s1L = [cetToTZ(e.s1[0],cetOff,userOff), cetToTZ(e.s1[1],cetOff,userOff)];
+    const s2L = [cetToTZ(e.s2[0],cetOff,userOff), cetToTZ(e.s2[1],cetOff,userOff)];
+    const s1C = [cetToTZ(e.s1[0],cetOff,chiOff),  cetToTZ(e.s1[1],cetOff,chiOff)];
+    const s2C = [cetToTZ(e.s2[0],cetOff,chiOff),  cetToTZ(e.s2[1],cetOff,chiOff)];
+
+    const s1Live = isToday && nowH>=s1L[0] && nowH<s1L[1];
+    const s2Live = isToday && (s2L[1]>s2L[0]
+      ? (nowH>=s2L[0] && nowH<s2L[1])
+      : (nowH>=s2L[0] || nowH<s2L[1]));
+
+    const tr = document.createElement('tr');
+    if(isToday) tr.className = 'today-row';
+    tr.innerHTML = `
+      <td>
+        <div class="td-day">${e.day}</div>
+        ${isToday ? '<div class="today-pill">Today</div>' : ''}
+      </td>
+      <td>
+        <div class="sess-block">
+          <div class="sess-row"><span class="sess-num">S1</span></div>
+          <div class="sess-row"><span class="sess-num">S2</span></div>
+        </div>
+      </td>
+      <td>
+        <div class="sess-block">
+          <div class="sess-row">
+            <span class="sess-time hi">${fmt12(s1L[0])} – ${fmt12(s1L[1])}</span>
+            ${s1Live ? '<span class="live-pill">Live</span>' : ''}
+          </div>
+          <div class="sess-row">
+            <span class="sess-time hi">${fmt12(s2L[0])} – ${fmt12(s2L[1])}</span>
+            ${s2Live ? '<span class="live-pill">Live</span>' : ''}
+          </div>
+        </div>
+      </td>
+      <td class="col-rule"></td>
+      <td>
+        <div class="sess-block">
+          <div class="sess-row">
+            <span class="sess-time">${fmt12(s1C[0])} – ${fmt12(s1C[1])}</span>
+            <span class="sess-tz">${chiName}</span>
+          </div>
+          <div class="sess-row">
+            <span class="sess-time">${fmt12(s2C[0])} – ${fmt12(s2C[1])}</span>
+            <span class="sess-tz">${chiName}</span>
+          </div>
+        </div>
+      </td>
+      <td class="col-rule"></td>
+      <td>
+        <div class="sess-block">
+          <div class="sess-row">
+            <span class="sess-time">${fmt24(e.s1[0])} – ${fmt24(e.s1[1])}</span>
+            <span class="sess-tz">${cetName}</span>
+          </div>
+          <div class="sess-row">
+            <span class="sess-time">${fmt24(e.s2[0])} – ${fmt24(e.s2[1])}</span>
+            <span class="sess-tz">${cetName}</span>
+          </div>
+        </div>
+      </td>`;
+    tbody.appendChild(tr);
+  });
+}
+
+function updateStrip(sessions) {
+  const now  = Date.now();
+  const dot  = document.getElementById('liveDot');
+  const word = document.getElementById('liveWord');
+  const cd   = document.getElementById('countdown');
+  const cdL  = document.getElementById('countdownLabel');
+  const nd   = document.getElementById('nextDay');
+  const ns   = document.getElementById('nextSess');
+
+  const live = sessions.find(s => now >= s.startEpoch && now < s.endEpoch);
+  if (live) {
+    dot.className = 'live-dot on';
+    word.className = 'live-word on'; word.textContent = 'Live now';
+    cdL.textContent = 'Session ends in';
+    let d = (live.endEpoch - now) / 1000;
+    const h=Math.floor(d/3600); d-=h*3600;
+    const m=Math.floor(d/60);   d-=m*60;
+    cd.textContent = `${pad(h)}:${pad(m)}:${pad(d)}`;
+    nd.textContent = live.day;
+    ns.textContent = `Session ${live.session} · on air`;
+    return;
+  }
+
+  const next = sessions.find(s => s.startEpoch > now);
+  if (!next) {
+    dot.className='live-dot'; word.className='live-word'; word.textContent='Offline';
+    cd.textContent='--:--:--'; nd.textContent='—'; ns.textContent='—';
+    return;
+  }
+
+  dot.className = 'live-dot soon';
+  word.className = 'live-word soon'; word.textContent = 'Offline';
+  cdL.textContent = 'Next session in';
+  let d = (next.startEpoch - now) / 1000;
+  const days=Math.floor(d/86400); d-=days*86400;
+  const h=Math.floor(d/3600); d-=h*3600;
+  const m=Math.floor(d/60);   d-=m*60;
+  cd.textContent = days>0 ? `${days}d ${pad(h)}h ${pad(m)}m` : `${pad(h)}:${pad(m)}:${pad(d)}`;
+  nd.textContent = next.day;
+  ns.textContent = `Session ${next.session}`;
+}
+
+let sessions = [];
+
+function init() {
+  const now    = new Date();
+  const cetOff = getTZOffset('Europe/Warsaw', now);
+  const chiOff = getTZOffset('America/Chicago', now);
+  const userOff = -now.getTimezoneOffset() / 60;
+  const cetName = cetOff === 2 ? 'CEST' : 'CET';
+  const chiName = chiOff === -5 ? 'CDT' : 'CST';
+  const tzName  = Intl.DateTimeFormat().resolvedOptions().timeZone;
+  const sign    = userOff >= 0 ? '+' : '';
+  const utcStr  = `UTC ${sign}${userOff}`;
+
+  document.getElementById('yourTz').textContent = tzName.replace(/_/g,' ');
+  document.getElementById('tzOff').textContent  = utcStr;
+  document.getElementById('tzNote').textContent = tzName.replace(/_/g,' ');
+  document.getElementById('footerNote').textContent = `Poland: ${cetName} UTC+${cetOff} · Chicago: ${chiName} UTC${chiOff}`;
+
+  sessions = buildSessions(cetOff);
+  renderTable(cetOff, userOff, chiOff, cetName, chiName);
+}
+
+function tick() {
+  const n = new Date();
+  document.getElementById('localTime').textContent =
+    `${pad(n.getHours())}:${pad(n.getMinutes())}:${pad(n.getSeconds())}`;
+  updateStrip(sessions);
+}
+
+init();
+tick();
+setInterval(tick, 1000);
+setInterval(init, 60000);
+</script>
+</body>
+</html>
